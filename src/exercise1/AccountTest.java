@@ -12,14 +12,10 @@ public class AccountTest {
         for(int i = 0; i < 3; i++){
             transactions.add(new Transaction(account1));
         }
-
         ExecutorService executorService = Executors.newCachedThreadPool();
         for(int i = 0; i < 3; i++){
             executorService.execute(transactions.get(i));
         }
-
-
-
         executorService.shutdown();
     }
 }
